@@ -1,0 +1,20 @@
+{
+  "name": "wild-horizons",
+  "version": "1.0.0",
+  "description": "a dataset of the planet's most interisting places",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "default",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "default"
+  },
+  "keywords": [
+    "default"
+  ],
+  "author": "sumaiya",
+  "license": "ISC"
+}

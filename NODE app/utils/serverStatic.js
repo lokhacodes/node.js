@@ -1,7 +1,7 @@
 import path from 'node:path';
 import fs from 'node:fs';
 import { sendResponse } from './sendResponse.js';
-import { getContentType } from './utils/getaContentType'
+import { getContentType } from './getaContentType.js'
 export async function serverStatic(req, res, baseDir) {
    
     const publicDir = path.join(baseDir, 'public')

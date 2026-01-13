@@ -1,5 +1,5 @@
 import http from 'node:http'
-import { serveStatic } from './utils/serverStatic.js'
+import {serveStatic} from './utils/serveStatic.js'
 
 const PORT = 8000
 

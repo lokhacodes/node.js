@@ -15,10 +15,10 @@ A platform for sharing ghostly encounters and paranormal sightings. This Node.js
 - **Event-Driven Architecture**: Uses Node.js events for handling new sightings.
 
 ## Output
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
+![alt text](output/image-1.png)
+![alt text](output/image-2.png)
+![alt text](output/image-3.png)
+![alt text](output/image-4.png)
 
 ## Installation
 

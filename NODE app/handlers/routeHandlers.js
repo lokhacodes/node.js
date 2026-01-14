@@ -1,6 +1,8 @@
 import { getData} from '../utils/getData.js';
 import { parseJSONBody } from '../utils/parseJSONBody.js';
 import { sendResponse } from '../utils/sendResponse.js';
+import {addNewSighting} from '../utils/addNewSighting.js';
+
 
 export async function handleGet(res){
    const data = await getData();
@@ -10,6 +12,12 @@ export async function handleGet(res){
 }
 
 export async function handlePost(req, res){
-    const rawBody = await parseJSONBody(req);
-    console.log(rawBody);
+    
+    try{
+        const parsedBody = await parseJSONBody(req);
+        await addNewSighting(parsedBody);
+        sendResponse(res, 201, 'application/json', JSON.stringify({message: 'Sighting added successfully'}));
+    } catch (err){
+        sendResponse(res, 400, 'application/json', JSON.stringify({error: err.message}));
+}
 }

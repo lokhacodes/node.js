@@ -1,6 +1,9 @@
 import {getData} from './getData.js'
 import fs from 'node:fs/promises'
 import path from 'node:path'
+
+/*File → Read → JS array → Modify → JSON text → Write → File*/
+
 export async function addNewSighting(newSighting){
     try {
     const sightings = await getData();

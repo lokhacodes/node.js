@@ -21,8 +21,14 @@ Reading and serving data
 Let me know if you'd like this turned into code or a diagram!
 
 
+
+
 Important concepts I learnt for this project 
 OS agnostoc-which doesn't operating system it works on 
 import.meta is an object specific to the modular JS environment, which provides metadata about the current module.
 difference between absolute and relative path with relative module 
 
+XSS Attacks
+An XSS (Cross-Site Scripting) attack is a security vulnerability that allows an attacker to inject malicious scripts into web pages.
+
+Sanitization is removing anything suspicious from incoming input. In this case, we will be removing any tags from user-uploaded text.

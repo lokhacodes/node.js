@@ -7,6 +7,20 @@ const PORT = 8000
 
 const __dirname = import.meta.dirname
 
+/*
+Challenge:
+
+DO NOT WRITE CODE IN SERVER.JS
+
+1. Sanitize the incoming data. 
+    Allow only the <b> tag and no attributes.
+    
+2. Test it with the code in story.md.
+   
+   hint.md for help
+*/
+
+
 
 
 const server = http.createServer(async (req, res) => {

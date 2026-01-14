@@ -2,7 +2,7 @@ import { getData} from '../utils/getData.js';
 import { parseJSONBody } from '../utils/parseJSONBody.js';
 import { sendResponse } from '../utils/sendResponse.js';
 import {addNewSighting} from '../utils/addNewSighting.js';
-import { SanitizeInput } from '../utils/sanitizeinput.js';
+import  {sanitizeInput}  from '../utils/sanitizeinput.js';
 import { sightingEvents } from '../events/sightingEvents.js';
 import {stories} from '../data/stories.js';
 
@@ -42,21 +42,20 @@ export async function handleNews(req, res) {
   res.setHeader("Cache-Control", "no-cache")
   res.setHeader("Connection", "keep-alive")
 
-  // Challenge 1:
-  // 1. Set Content-Type, Cache-Control, and Connection headers
-}
+  const intervalId = setInterval(() => {
+    let randomIndex = Math.floor(Math.random() * stories.length)
 
-setInterval(() => {
-  let randomIndex = Math.floor(Math.random() * stories.length)
-   
-  res.write(
+    res.write(
       `data: ${JSON.stringify({
-      event: 'news-update',
-      story: stories[randomIndex]
+        event: 'news-update',
+        story: stories[randomIndex]
+      })}\n\n`
+    )
+  }, 3000)
 
-    })}\n\n`
-  )
-
-
-     
-}, 3000)
+  // Clean up when client disconnects
+  req.on('close', () => {
+    clearInterval(intervalId)
+    res.end()
+  })
+}

@@ -4,6 +4,7 @@ import { sendResponse } from '../utils/sendResponse.js';
 import {addNewSighting} from '../utils/addNewSighting.js';
 import { SanitizeInput } from '../utils/sanitizeinput.js';
 import { sightingEvents } from '../events/sightingEvents.js';
+import {stories} from '../data/stories.js';
 
 export async function handleGet(res){
    const data = await getData();
@@ -24,3 +25,38 @@ export async function handlePost(req, res){
         sendResponse(res, 400, 'application/json', JSON.stringify({error: err.message}));
 }
 }
+
+/*
+Client requests /api/news
+Server sets SSE headers
+Connection stays open
+Every 3 seconds:
+Random story picked
+Sent to client
+Browser receives live updates*/
+
+export async function handleNews(req, res) {
+  res.statusCode = 200
+
+  res.setHeader("Content-Type", "text/event-stream")
+  res.setHeader("Cache-Control", "no-cache")
+  res.setHeader("Connection", "keep-alive")
+
+  // Challenge 1:
+  // 1. Set Content-Type, Cache-Control, and Connection headers
+}
+
+setInterval(() => {
+  let randomIndex = Math.floor(Math.random() * stories.length)
+   
+  res.write(
+      `data: ${JSON.stringify({
+      event: 'news-update',
+      story: stories[randomIndex]
+
+    })}\n\n`
+  )
+
+
+     
+}, 3000)

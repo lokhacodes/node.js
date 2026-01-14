@@ -32,3 +32,11 @@ XSS Attacks
 An XSS (Cross-Site Scripting) attack is a security vulnerability that allows an attacker to inject malicious scripts into web pages.
 
 Sanitization is removing anything suspicious from incoming input. In this case, we will be removing any tags from user-uploaded text.
+
+
+things accomplished
+- The FS module- reading/writing files
+- The Path module- create file/directory paths
+- Serving static assets
+- Dependencies
+- Sanitizing input

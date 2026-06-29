@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #f7fbff 0%, #e0f3ff 100%);
+  color: #1f2937;
+}
+
+header {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 24px 20px;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+nav h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: #f8fafc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+main {
+  max-width: 760px;
+  margin: 32px auto;
+  padding: 0 20px 40px;
+}
+
+h1 {
+  color: #0f172a;
+}
+
+form {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+  margin-top: 24px;
+}
+
+form div {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #f8fafc;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+button {
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 9999px;
+  background: #3b82f6;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+footer {
+  text-align: center;
+  margin-top: 32px;
+  color: #475569;
+}
+
+.result-container {
+  margin-top: 24px;
+}
+
+.result-card {
+  background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
+  border-radius: 18px;
+  padding: 22px;
+  border: 1px solid #bfdbfe;
+  box-shadow: 0 18px 40px rgba(59, 130, 246, 0.12);
+}
+
+.result-card.result-error {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+.result-label {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.result-value {
+  font-size: 2.4rem;
+  margin: 12px 0 6px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.result-message {
+  margin: 0;
+  color: #334155;
+  font-size: 0.98rem;
+}
